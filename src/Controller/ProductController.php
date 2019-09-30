@@ -12,16 +12,17 @@ use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Swagger\Annotations as SWG;
 
 
-class ProductController extends AbstractFOSRestController {
+class ProductController extends AbstractFOSRestController
+{
 
-    /**
-     * @Get("/api")
-     */
-    public function index(){
-        $data = ['name' => 'marco', 'surname' => 'picasso'];
+    // /**
+    //  * @Get("/api")
+    //  */
+    // public function index(){
+    //     $data = ['name' => 'marco', 'surname' => 'picasso'];
 
-        return View::create($data, Response::HTTP_OK);
-    }
+    //     return View::create($data, Response::HTTP_OK);
+    // }
 
     /**
      * Retrive Data
@@ -36,8 +37,9 @@ class ProductController extends AbstractFOSRestController {
      * @SWG\Tag(name="flyers")
      * 
      */
-    public function getAll(Request $request){
-        
+    public function getAll(Request $request)
+    {
+
         /**
          * StorageService instance with the specific reader
          */
@@ -55,5 +57,4 @@ class ProductController extends AbstractFOSRestController {
          */
         return View::create($data, Response::HTTP_OK);
     }
-
 }
