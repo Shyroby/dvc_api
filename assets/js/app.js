@@ -1,12 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import MainPage from './Components/MainPage';
 class App extends React.Component {
   render() {
     return (
-      <div>
-        <h1>Hello</h1>
-      </div>
-    )
+      <BrowserRouter>
+        <Switch> />
+          <Route path="/" component={MainPage} />
+        </Switch>
+      </BrowserRouter>
+    );
   }
 }
-ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById("root"));
