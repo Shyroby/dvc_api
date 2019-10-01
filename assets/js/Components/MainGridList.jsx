@@ -5,14 +5,13 @@ import {
   Card,
   Grid,
   Loader,
-  CardGroup
 } from "semantic-ui-react";
 import "../Containers/MainPage";
 
 function MainGrid(props) {
   const ListItems = props.data.map((arr, i) => (
-    <Grid.Column mobile={8} tablet={4} computer={4} key={i} container>
-      <Card style={{ borderRadius: "10px!important", maxWidth: "245" }}>
+    <Grid.Column mobile={8} tablet={4} computer={4} key={i}>
+      <Card style={{ borderRadius: "10px!important",  height: '350px' }}>
         {/* <Image src="https://picsum.photos/200/300" wrapped ui={false} /> */}
         <Placeholder>
           <Placeholder.Image />
@@ -39,7 +38,11 @@ function MainGrid(props) {
   if (props.isLoading) {
     return <Loader active inline="centered" />;
   }
-  return <Grid textAlign="left">{ListItems}</Grid>;
+  return (
+
+      <Grid container className="segment" textAlign="left">{ListItems}</Grid>
+
+  );
 }
 
 export default MainGrid;

@@ -4,6 +4,7 @@ import "./Components.css";
 
 function SideNav(props) {
   return (
+
     <Sidebar
       as={Menu}
       animation="overlay"
@@ -20,6 +21,7 @@ function SideNav(props) {
       </Menu.Item>
       {props.children}
     </Sidebar>
+
   );
 }
 

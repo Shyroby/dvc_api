@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import _ from "lodash";
 import "../../css/mainPage.css";
-import { Sidebar, Segment, Grid, Container, Header } from 'semantic-ui-react';
+import { Sidebar, Segment, Grid, Container, Header } from "semantic-ui-react";
 import axios from "axios";
 import SideNav from "../Components/SideNav";
 import FavList from "../Components/FavList";
@@ -11,7 +11,6 @@ import AppBar from "../Components/AppBar";
 class MainPage extends Component {
   constructor(props) {
     super(props);
-
 
     this.state = {
       loading: true,
@@ -35,7 +34,7 @@ class MainPage extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:8000/api/flyers?page=1&limit=50")
+      .get("http://localhost:8000/api/flyers?page=1&limit=10")
       .then(response => {
         this.setState({
           loading: false,
@@ -91,24 +90,24 @@ class MainPage extends Component {
 
   render() {
     return (
-      <Sidebar.Pushable className="section">
-        <SideNav
-          visible={this.state.visible}
-          onHide={() => this.handleOnHide()}
-        >
-          <FavList
-            dataf={this.state.dataf}
-            onClick={e => this.handleDeleteFavorite(e)}
-          />
-        </SideNav>
-        <Sidebar.Pusher>
+      <Sidebar.Pushable>
+          <SideNav
+            visible={this.state.visible}
+            onHide={() => this.handleOnHide()}
+          >
+            <FavList
+              dataf={this.state.dataf}
+              onClick={e => this.handleDeleteFavorite(e)}
+            />
+          </SideNav>
+        <Sidebar.Pusher >
           {/* AppBar */}
           <AppBar onClick={() => this.handleVisibility()} />
           <Container text style={{ marginTop: "4em", marginBottom: "1em" }}>
             <Header as="h2">DoveConviene.it</Header>
           </Container>
           {/* End AppBar */}
-          <Grid centered>
+          <Grid centered >
             <Segment basic loading={this.state.isLoading} className="segment">
               <MainGrid
                 data={this.state.data}
