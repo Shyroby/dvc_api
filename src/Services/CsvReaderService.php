@@ -40,7 +40,7 @@ class CsvReaderService implements AdapterInterface
         //Get the needed entries from the CSV.
         for ($line = 0; $line < $limit; $line++) {
             //exclude lines with past end_date and is_published false
-            $endof = date('Y-m-d', time());            
+            $endof = date('Y-m-d', time());            //<--- non sono presenti record con end_date futura!!!
             $data = fgetcsv($handler, 1000, ",");
             if ( $data[0] == 0 || $endof < $data[3]  ) continue;
 
