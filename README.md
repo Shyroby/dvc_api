@@ -2,6 +2,8 @@
 
 git clone https://github.com/Shyroby/dvc_api.git
 
+composer install
+
 yarn install
 
 yarn encore dev
