@@ -34,7 +34,7 @@ class MainPage extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:8000/api/flyers?page=1&limit=10")
+      .get("http://localhost:8000/api/flyers?page=1&limit=100")
       .then(response => {
         this.setState({
           loading: false,
