@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import _ from "lodash";
 import "../../css/mainPage.css";
-import { Sidebar, Segment, Grid, Container, Header } from "semantic-ui-react";
+import { Sidebar, Segment, Grid, Container, Header } from 'semantic-ui-react';
 import axios from "axios";
-
 import SideNav from "../Components/SideNav";
 import FavList from "../Components/FavList";
 import MainGrid from "../Components/MainGridList";
@@ -12,6 +11,7 @@ import AppBar from "../Components/AppBar";
 class MainPage extends Component {
   constructor(props) {
     super(props);
+
 
     this.state = {
       loading: true,
@@ -35,7 +35,7 @@ class MainPage extends Component {
 
   componentDidMount() {
     axios
-      .get("http://127.0.0.1:8000/api/flyers?page=1&limit=50")
+      .get("http://localhost:8000/api/flyers?page=1&limit=50")
       .then(response => {
         this.setState({
           loading: false,
