@@ -21,26 +21,26 @@ class ProductController extends AbstractFOSRestController
     public function getAll(Request $request)
     {
 
-        // // /**
-        // //  * StorageService instance with the specific reader
-        // //  */
-        // // $adapter = new StorageService(new CsvReaderService);
+        /**
+         * StorageService instance with the specific reader
+         */
+        $adapter = new StorageService(new CsvReaderService);
 
-        // // /**
-        // //  * call the getAllCriteria method to retrive 
-        // //  * all the matches according to query 
-        // //  */
-        // // $criteria = $request->query->all();
-        // // $data = $adapter->getAllCriteria($criteria);
+        /**
+         * call the getAllCriteria method to retrive 
+         * all the matches according to query 
+         */
+        $criteria = $request->query->all();
+        $data = $adapter->getAllCriteria($criteria);
 
-        // // /**
-        // //  * FOSREST viewlayer
-        // //  */
+        /**
+         * FOSREST viewlayer
+         */
 
 
-        $data = [
-            'errors' => $errors,
-        ];
+        // // $data = [
+        // //     'errors' => $errors,
+        // // ];
         return View::create($data, Response::HTTP_OK);
     }
 }
