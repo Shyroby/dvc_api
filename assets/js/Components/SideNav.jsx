@@ -4,7 +4,8 @@ import "./Components.css";
 
 function SideNav(props) {
   return (
-    <Sidebar as={List}
+    <Sidebar
+      as={Menu}
       animation="overlay"
       inverted={false}
       vertical
@@ -12,12 +13,10 @@ function SideNav(props) {
       visible={props.visible}
       width="wide"
     >
-      <Menu as={Segment} position="left">
-        <Menu.Item>
-          <Icon name="heart" />
-        </Menu.Item>
-        <Menu.Item >{props.children}</Menu.Item>
-      </Menu>
+      <Menu.Item>
+        <Icon name="heart" />
+      </Menu.Item>
+      {props.children}
     </Sidebar>
   );
 }

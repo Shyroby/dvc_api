@@ -90,23 +90,21 @@ class MainPage extends Component {
 
   render() {
     return (
-
-      <Sidebar.Pushable as={Segment} >
-          <SideNav
-          
-            visible={this.state.visible}
-            onHide={() => this.handleOnHide()}
-          >
-            <FavList
-              dataf={this.state.dataf}
-              onClick={e => this.handleDeleteFavorite(e)}
-            />
-          </SideNav>
-        <Sidebar.Pusher >
+      <Sidebar.Pushable>
+        <SideNav
+          visible={this.state.visible}
+          onHide={() => this.handleOnHide()}
+        >
+          <FavList
+            dataf={this.state.dataf}
+            onClick={e => this.handleDeleteFavorite(e)}
+          />
+        </SideNav>
+        <Sidebar.Pusher>
           {/* AppBar */}
           <AppBar onClick={() => this.handleVisibility()} />
           {/* End AppBar */}
-          <Grid centered >
+          <Grid centered>
             <Segment loading={this.state.isLoading} className="segment">
               <MainGrid
                 data={this.state.data}
@@ -117,7 +115,6 @@ class MainPage extends Component {
           </Grid>
         </Sidebar.Pusher>
       </Sidebar.Pushable>
-
     );
   }
 }
