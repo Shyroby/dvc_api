@@ -4583,6 +4583,10 @@ pbkdf2@^3.0.3:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
+phpunit-bridge@symfony/phpunit-bridge:
+  version "0.0.0"
+  resolved "https://codeload.github.com/symfony/phpunit-bridge/tar.gz/cbe59fe04a087d00993ad9929de0120617830adc"
+
 pify@^2.0.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/pify/-/pify-2.3.0.tgz#ed141a6ac043a849ea588498e7dca8b15330e90c"
