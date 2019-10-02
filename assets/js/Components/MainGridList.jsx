@@ -5,23 +5,21 @@ import {
   Card,
   Grid,
   Loader,
+  CardContent
 } from "semantic-ui-react";
 import "../Containers/MainPage";
 
 function MainGrid(props) {
   const ListItems = props.data.map((arr, i) => (
     <Grid.Column mobile={8} tablet={4} computer={4} key={i}>
-      <Card style={{ borderRadius: "10px!important",  height: '350px' }}>
-        {/* <Image src="https://picsum.photos/200/300" wrapped ui={false} /> */}
+      <Card style={{ fontSize: '12px', borderRadius: "20px!important", height: "260px" }}>
         <Placeholder>
           <Placeholder.Image />
         </Placeholder>
         <Card.Content>
+          <Card.Meta>{arr.retailer}</Card.Meta>
           <Card.Header>{arr.title}</Card.Header>
-          <Card.Meta>
-            <span className="date">{arr.end_date}</span>
-          </Card.Meta>
-          <Card.Description>{arr.description}</Card.Description>
+          <Card.Description>{arr.category}</Card.Description>
         </Card.Content>
         <Card.Content extra>
           <Button
@@ -39,9 +37,9 @@ function MainGrid(props) {
     return <Loader active inline="centered" />;
   }
   return (
-
-      <Grid container className="segment" textAlign="left">{ListItems}</Grid>
-
+    <Grid container className="segment" textAlign="left">
+      {ListItems}
+    </Grid>
   );
 }
 
