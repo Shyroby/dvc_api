@@ -103,9 +103,6 @@ class MainPage extends Component {
         <Sidebar.Pusher >
           {/* AppBar */}
           <AppBar onClick={() => this.handleVisibility()} />
-          <Container text style={{ marginTop: "4em", marginBottom: "1em" }}>
-            <Header as="h2">DoveConviene.it</Header>
-          </Container>
           {/* End AppBar */}
           <Grid centered >
             <Segment basic loading={this.state.isLoading} className="segment">
