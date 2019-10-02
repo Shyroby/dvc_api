@@ -1,18 +1,11 @@
 import React from "react";
-import {
-  Placeholder,
-  Button,
-  Card,
-  Grid,
-  Loader,
-} from "semantic-ui-react";
+import { Placeholder, Button, Card, Grid, Loader } from "semantic-ui-react";
 import "../Containers/MainPage";
 
 function MainGrid(props) {
   const ListItems = props.data.map((arr, i) => (
     <Grid.Column mobile={8} tablet={4} computer={4} key={i}>
-      <Card style={{ borderRadius: "10px!important",  height: '350px' }}>
-        {/* <Image src="https://picsum.photos/200/300" wrapped ui={false} /> */}
+      <Card style={{ height: "350px" }}>
         <Placeholder>
           <Placeholder.Image />
         </Placeholder>
@@ -39,9 +32,9 @@ function MainGrid(props) {
     return <Loader active inline="centered" />;
   }
   return (
-
-      <Grid container className="segment" textAlign="left">{ListItems}</Grid>
-
+    <Grid container className="segment" textAlign="left">
+      {ListItems}
+    </Grid>
   );
 }
 

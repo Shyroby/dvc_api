@@ -90,9 +90,10 @@ class MainPage extends Component {
 
   render() {
     return (
-      <div>
-      <Sidebar.Pushable>
+
+      <Sidebar.Pushable as={Segment} >
           <SideNav
+          
             visible={this.state.visible}
             onHide={() => this.handleOnHide()}
           >
@@ -106,7 +107,7 @@ class MainPage extends Component {
           <AppBar onClick={() => this.handleVisibility()} />
           {/* End AppBar */}
           <Grid centered >
-            <Segment basic loading={this.state.isLoading} className="segment">
+            <Segment loading={this.state.isLoading} className="segment">
               <MainGrid
                 data={this.state.data}
                 isLoading={this.state.loading}
@@ -116,7 +117,6 @@ class MainPage extends Component {
           </Grid>
         </Sidebar.Pusher>
       </Sidebar.Pushable>
-      </div>
 
     );
   }
