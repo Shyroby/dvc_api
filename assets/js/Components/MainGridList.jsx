@@ -37,7 +37,7 @@ function MainGrid(props) {
     return <Loader active inline="centered" />;
   }
   return (
-    <Grid container className="segment" textAlign="left">
+    <Grid container  textAlign="left">
       {ListItems}
     </Grid>
   );
