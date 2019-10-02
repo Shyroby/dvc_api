@@ -36,11 +36,6 @@ class ProductController extends AbstractFOSRestController
         /**
          * FOSREST viewlayer
          */
-
-
-        // // $data = [
-        // //     'errors' => $errors,
-        // // ];
         return View::create($data, Response::HTTP_OK);
     }
 }
