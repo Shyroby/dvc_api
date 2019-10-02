@@ -3,6 +3,7 @@ web_controller:
     type: annotation
     prefix: /web
 
+
 rest_controller:
     resource: ../../src/Controller/Rest
     type: annotation
