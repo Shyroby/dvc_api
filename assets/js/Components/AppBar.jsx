@@ -16,10 +16,10 @@ export default class AppBar extends Component {
 
   render() {
     const { activeItem } = this.state;
-    const { color } = this.props;
+
     return (
       <>
-        <Menu color={color} icon fixed="top" size='massive'>
+        <Menu icon fixed="top" size='massive'>
           <Menu.Item
             name="bars"
             active={activeItem === "bars"}
