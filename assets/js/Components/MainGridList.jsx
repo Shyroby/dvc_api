@@ -11,7 +11,7 @@ import "../Containers/MainPage";
 function MainGrid(props) {
   const ListItems = props.data.map((arr, i) => (
     <Grid.Column mobile={8} tablet={4} computer={4} key={i}>
-      <Card style={{ fontSize: '12px', borderRadius: "20px!important", height: "260px" }}>
+      <Card style={{ fontSize: '13px', borderRadius: "20px!important", height: "260px" }}>
         <Placeholder>
           <Placeholder.Image />
         </Placeholder>
@@ -24,7 +24,6 @@ function MainGrid(props) {
           <Button
             circular
             icon="heart"
-            value={arr.id}
             onClick={() => props.onClick(arr)}
           />
         </Card.Content>

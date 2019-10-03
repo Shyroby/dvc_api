@@ -105,7 +105,7 @@ class MainPage extends Component {
           <AppBar onClick={() => this.handleVisibility()} />
           {/* End AppBar */}
           <Grid centered>
-            <Segment loading={this.state.isLoading} className="segment">
+            <Segment basic loading={this.state.isLoading} className="segment">
               <MainGrid
                 data={this.state.data}
                 isLoading={this.state.loading}

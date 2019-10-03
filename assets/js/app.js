@@ -1,15 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import MainPage from './Containers/MainPage';
+import ErrorBoundary from './Containers/errors/ErrorBoundary';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import MainPage from "./Containers/MainPage";
 class App extends React.Component {
   render() {
     return (
-      <BrowserRouter>
-        <Switch> />
-          <Route path="/" component={MainPage} />
-        </Switch>
-      </BrowserRouter>
+      <ErrorBoundary>
+        <BrowserRouter>
+          <Switch>
+            <Route path="/" component={MainPage} />
+          </Switch>
+        </BrowserRouter>
+      </ErrorBoundary>
     );
   }
 }
