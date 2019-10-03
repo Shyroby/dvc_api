@@ -19,7 +19,7 @@ export default class AppBar extends Component {
 
     return (
       <>
-        <Menu icon fixed="top" size='massive'>
+        <Menu fixed="top" size='massive'>
           <Menu.Item
             name="bars"
             active={activeItem === "bars"}
