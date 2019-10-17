@@ -2,7 +2,6 @@
 
 namespace App\Controller\Rest;
 
-use App\Factories\AbstractCreator;
 use App\Factories\ReaderFactory;
 use FOS\RestBundle\View\View;
 use Symfony\Component\HttpFoundation\Request;

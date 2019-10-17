@@ -18,14 +18,4 @@ class ReaderFactory extends AbstractCreator {
         }
     }
 
-    // public function __construct(string $source)
-    // {
-    //     $this->source = $source;
-    // }
-
-    // /**
-    //  * @var string
-    //  */
-    // private $source;
-
 }
