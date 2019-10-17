@@ -2,9 +2,8 @@
 
 namespace App\Controller\Rest;
 
+use App\Factories\ReaderFactory;
 use FOS\RestBundle\View\View;
-use App\Services\StorageService;
-use App\Services\CsvReaderService;
 use Symfony\Component\HttpFoundation\Request;
 use FOS\RestBundle\Controller\Annotations\Get;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,9 +21,10 @@ class ProductController extends AbstractFOSRestController
     {
 
         /**
-         * StorageService instance with the specific reader
+         * Instance of the reader through the ReaderFactory
          */
-        $adapter = new StorageService(new CsvReaderService);
+        $factory = new ReaderFactory('csv');
+        $adapter = $factory->make();
 
         /**
          * call the getAllCriteria method to retrive 
