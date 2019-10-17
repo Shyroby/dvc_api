@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use Generator;
+use Traversable;
 
 Interface AdapterInterface {
 

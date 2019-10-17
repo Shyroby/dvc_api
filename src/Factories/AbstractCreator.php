@@ -6,5 +6,5 @@ use App\Services\StorageService;
 
 abstract class AbstractCreator {
 
-    abstract function make(): StorageService ;
+    abstract function make(string $source): StorageService ;
 }

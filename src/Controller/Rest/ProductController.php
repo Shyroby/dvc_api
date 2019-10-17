@@ -2,6 +2,7 @@
 
 namespace App\Controller\Rest;
 
+use App\Factories\AbstractCreator;
 use App\Factories\ReaderFactory;
 use FOS\RestBundle\View\View;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,14 +18,13 @@ class ProductController extends AbstractFOSRestController
     /**
      * @Get("/flyers")
      */
-    public function getAll(Request $request)
+    public function getAll(Request $request, ReaderFactory $creator)
     {
 
         /**
-         * Instance of the reader through the ReaderFactory
+         * autowire the reader factory 
          */
-        $factory = new ReaderFactory('csv');
-        $adapter = $factory->make();
+        $adapter = $creator->make('csv');
 
         /**
          * call the getAllCriteria method to retrive 

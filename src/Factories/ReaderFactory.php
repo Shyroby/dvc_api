@@ -10,22 +10,22 @@ class ReaderFactory extends AbstractCreator {
     /**
      * factory method
      */
-    public function make(): StorageService
+    public function make(string $source): StorageService
     {
-        switch($this->source){
+        switch($source){
             case 'csv':
             return new StorageService(new CsvReaderService);
         }
     }
 
-    public function __construct(string $source)
-    {
-        $this->source = $source;
-    }
+    // public function __construct(string $source)
+    // {
+    //     $this->source = $source;
+    // }
 
-    /**
-     * @var string
-     */
-    private $source;
+    // /**
+    //  * @var string
+    //  */
+    // private $source;
 
 }
